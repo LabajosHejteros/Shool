@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přidání do DB</title>
+    <style>
+         /* Styly pro formulář */
+    form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    /* Styly pro nadpis formuláře */
+    form h2 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Styly pro vstupní pole */
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Styly pro tlačítko odeslání */
+    form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Přidání hover efektu při najetí myši na tlačítko odeslání */
+    form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+        
+    </style>
+
+</head>
+<body>
+
+    <form action="/newusers" method="POST">
+
+        <label for="Jméno">Jméno:</label><br>
+
+        <input type="text" id="Jméno" name="Jméno" value=><br>
+
+        <label for="Příjmení">Příjmení:</label><br>
+
+        <input type="text" id="Příjmení" name="Příjmení" value=><br>
+        <label for="Bydliště">Bydliště:</label><br>
+
+        <input type="text" id="Bydliště" name="Bydliště" value=><br><br>
+
+        <input type="submit" value="Přidat do databáze">
+
+      </form>
+
+</body>
+
+</html>
