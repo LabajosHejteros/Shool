@@ -28,7 +28,7 @@ app.get('/index', (req, res) => {
 })
 
 
-//rOUTA USERS
+//ROUTA USERS
 app.get('/users', (req, res) => {
  
   //dotaz na SQL
@@ -80,7 +80,7 @@ app.get('/newusers', (req, res) => {
 app.post('/newusers', function (request, response, next) {
  
   // SQL dotaz pro vložení dat do databáze
-  var sql = `INSERT INTO labajos (Jméno, Příjmení, Bydliště) VALUES ('${request.body.FirstName}','${request.body.Příjmení}','${request.body.Bydliště}')`;
+  var sql = `INSERT INTO labajos (Jméno, Příjmení, Bydliště) VALUES ('${request.body.Jméno}','${request.body.Příjmení}','${request.body.Bydliště}')`;
  
   connection.query(sql, (error, results, fields) => {
     if (error) {
