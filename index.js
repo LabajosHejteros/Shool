@@ -26,6 +26,23 @@ app.get('/index', (req, res) => {
 
   res.render("index",{res})
 })
+app.get('/rozvrh', (req, res) => {
+
+  res.render("rozvrh",{res})
+})
+app.get('/rozvrh', (req, res) => {
+ 
+  //dotaz na SQL
+  connection.query('SELECT * FROM rozvrh', (error, results, fields) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+    console.log(results);
+  })})
+
+  
+
 
 
 //ROUTA USERS
