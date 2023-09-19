@@ -140,3 +140,8 @@ app.listen(port, () => {
 
   console.log(`Example app listening on port ${port}`)
 })
+
+
+//git add -A
+//git commit -m "co jsem udělal"
+//git push -u origin maing
