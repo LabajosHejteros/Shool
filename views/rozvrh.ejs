@@ -84,12 +84,11 @@
         <th>Ucitel</th>
         <th>Trida</th>
         <th>Predmet</th>
-          <% for(var i=0; i < res.length; i++) { %>
+          <% for(var i=0; i < results.length; i++) { %>
              <tr>
-               <td><%= res[i].Ucitel %></td>
-               <td><%= res[i].Trida %></td>
-               <td><%= res[i].Predmet %></td>
-               
+               <td><%= results[i].Ucitel %></td>
+               <td><%= results[i].Trida %></td>
+               <td><%= results[i].Predmet %></td>
              </tr>
           <% } %>
           </table>

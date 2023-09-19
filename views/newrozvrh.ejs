@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přidání do RZVRHU</title>
+    <style>
+         /* Styly pro formulář */
+    form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    /* Styly pro nadpis formuláře */
+    form h1 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Styly pro vstupní pole */
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Styly pro tlačítko odeslání */
+    form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Přidání hover efektu při najetí myši na tlačítko odeslání */
+    form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+        
+    </style>
+
+</head>
+<body>
+
+    <form action="/newrozvrh" method="POST">
+
+        <label for="Ucitel">Učitel:</label><br>
+
+        <input type="text" id="Ucitel" name="Ucitel" value=><br>
+
+        <label for="Trida">Třída:</label><br>
+
+        <input type="text" id="Trida" name="Trida" value=><br>
+        <label for="Predmet">Předmět:</label><br>
+
+        <input type="text" id="Predmet" name="Predmet" value=><br><br>
+
+        <input type="submit" value="Přidat do rozvrhu">
+
+      </form>
+
+</body>
+
+</html>

@@ -26,10 +26,8 @@ app.get('/index', (req, res) => {
 
   res.render("index",{res})
 })
-app.get('/rozvrh', (req, res) => {
 
-  res.render("rozvrh",{res})
-})
+  
 app.get('/rozvrh', (req, res) => {
  
   //dotaz na SQL
@@ -39,7 +37,13 @@ app.get('/rozvrh', (req, res) => {
       return;
     }
     console.log(results);
-  })})
+    res.render("rozvrh",{results})
+  })
+})
+
+
+  
+ 
 
   
 
@@ -107,6 +111,27 @@ app.post('/newusers', function (request, response, next) {
     console.log(results);
   })
   response.send(`Uživatele byli vloženi do DB`)
+  
+})
+app.get('/newrozvrh', (req, res) => {
+
+  res.render("newrozvrh",{res})
+})      
+app.post('/newrozvrh', function (request, response, next) {
+ 
+  // SQL dotaz pro vložení dat do databáze
+  var sql = `INSERT INTO rozvrh (Ucitel, Trida, Predme
+    
+    t) VALUES ('${request.body.Ucitel}','${request.body.Trida}','${request.body.Predmet}')`;
+ 
+  connection.query(sql, (error, results, fields) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+    console.log(results);
+  })
+  response.send(`Nový rozvrh byl vytvořen`)
   
 })
       
