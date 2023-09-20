@@ -120,9 +120,7 @@ app.get('/newrozvrh', (req, res) => {
 app.post('/newrozvrh', function (request, response, next) {
  
   // SQL dotaz pro vložení dat do databáze
-  var sql = `INSERT INTO rozvrh (Ucitel, Trida, Predme
-    
-    t) VALUES ('${request.body.Ucitel}','${request.body.Trida}','${request.body.Predmet}')`;
+  var sql = `INSERT INTO rozvrh (Ucitel, Trida, Predmet) VALUES ('${request.body.Ucitel}','${request.body.Trida}','${request.body.Predmet}')`;
  
   connection.query(sql, (error, results, fields) => {
     if (error) {
@@ -144,4 +142,4 @@ app.listen(port, () => {
 
 //git add -A
 //git commit -m "co jsem udělal"
-//git push -u origin maing
+//git push -u origin main
