@@ -60,36 +60,44 @@ app.get('/users', (req, res) => {
     }
     console.log(results);
  
-    // let tableRows = `<tr><td>ID</td><td>Jméno</td><td>Příjmení</td><td>Bydliště</td></tr>`;
- 
-    // results.forEach(user => {
- 
-      // tableRows += `<tr><td style="border: 1px solid black">${user.ID}</td><td style="border: 1px solid black">${user.Jméno}</td><td style="border: 1px solid black">${user.Příjmení}</td><td style="border: 1px solid black">${user.Bydliště}</td></tr>`;
- 
-    // });
- 
-    // const table = `<table>${tableRows}</table>`;
-    // console.log(table)
-    // res.send(table);
+  
     res.render("users",{results});
+ 
+  })
+})
+app.get('/deleteallusers', (req, res) => {
+ 
+  //dotaz na SQL
+  connection.query('SELECT * FROM labajos', (error, results, fields) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+    console.log(results);
+ 
+  
+    res.render("deleteallusers",{results});
  
   })
 })
   
 app.post('/deleteallusers', (req, res) => {
 
-  let sql = `DELETE FROM users`;
-  connection.query(sql,(error, results, fields) => {
+  let sql = 'DELETE FROM labajos WHERE id<1000;';
+  connection.query(sql, (error, results, fields) => {
     if (error) {
       console.error(error);
+      res.status(500).send('Chyba při mazání uživatelů');
       return;
     }
-    console.log(results)
-    console.log("Všichni uživatelé byli smazáni")
+    console.log("Všichni uživatelé byli smazáni");
+    
+    // Zde můžete provést další kroky po smazání uživatelů
 
-    res.render('users', {results});
+    res.redirect('/users'); // Přesměrování na stránku s uživateli nebo jinou cílovou stránku
   })
 })
+
     
 
 
