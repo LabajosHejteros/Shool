@@ -141,5 +141,5 @@ app.listen(port, () => {
 
 
 //git add -A
-//git commit -m "co jsem udělal"
+//git commit -m "kozleroshejteros"
 //git push -u origin main

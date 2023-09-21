@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seznam uživatelů</title>
+    <a href="/index">Zpět na hlavní stránku</a>
     <style>
+      /* Styl pro odkazy */
+     
+      a {
+            color: rgb(10, 11, 66); /* Barva textu odkazu */
+            background-color: rgba(11, 230, 212, 0.685); /* Barva pozadí odkazu */
+            padding: 10px 20px; /* Odstup (vnitřní mezera) uvnitř odkazu */
+            text-decoration: none; /* Odstřihne podtržení pod odkazem */
+            text-align: left; /* Zarovnání textu na levou stranu */
+            display: inline-block; /* Udělá odkaz blokovým prvkem, což umožní nastavit šířku a výšku */
+        }
 
 
 body {background-image: url(''); /* Obrázek jako pozadí */
@@ -104,6 +115,14 @@ tbody tr:last-child td:first-child {
 tbody tr:last-child td:last-child {
   border-bottom-right-radius: 10px;
 }
+ /* Styl pro odkazy */
+ a {
+            color: blue; /* Barva odkazu (můžete změnit na libovolnou) */
+            text-decoration: none; /* Odstřihne podtržení pod odkazem */
+            text-align: left; /* Zarovnání textu na levou stranu */
+            display: block; /* Udělá odkaz blokovým prvkem, což zajistí, že bude na samostatném řádku */
+            margin-bottom: 10px; /* Mezera mezi odkazy (nepovinná) */
+        }
 
     </style>
 </head>
@@ -121,6 +140,7 @@ tbody tr:last-child td:last-child {
            </tr>
         <% } %>
         </table>
+        
 
 
 </body>
