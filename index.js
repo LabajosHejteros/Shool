@@ -140,6 +140,23 @@ app.post('/newrozvrh', function (request, response, next) {
   response.send(`Nový rozvrh byl vytvořen`)
   
 })
+app.get('/update', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'rozvrh'))
+})
+//smazání zápisu
+app.post('/update', function (request, respone, next) {
+  var sql = `UPDATE rozvrh SET Predmet = '${request.body.Ucitel}', teacher ='${request.body.Trida}', classroom = '${request.body.Predmet}', budova ='${request.body.budova}', day ='${request.body.day}', hour ='${request.body.hour}', abb ='${request.body.abb}' WHERE id = ${request.body.id}`
+  connection.query(sql, (error, results, fields) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+    console.log(results);
+  })
+
+  respone.sendFile(path.join(__dirname, 'views', 'rozvrh'));
+
+})
       
  
 app.listen(port, () => {
