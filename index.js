@@ -140,30 +140,15 @@ app.post('/newrozvrh', function (request, response, next) {
   response.send(`Nový rozvrh byl vytvořen`)
   
 })
-app.get('/update', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'rozvrh'))
-})
-//smazání zápisu
-app.post('/update', function (request, respone, next) {
-  var sql = `UPDATE rozvrh SET Predmet = '${request.body.Ucitel}', teacher ='${request.body.Trida}', classroom = '${request.body.Predmet}', budova ='${request.body.budova}', day ='${request.body.day}', hour ='${request.body.hour}', abb ='${request.body.abb}' WHERE id = ${request.body.id}`
-  connection.query(sql, (error, results, fields) => {
-    if (error) {
-      console.error(error);
-      return;
-    }
-    console.log(results);
-  })
 
-  respone.sendFile(path.join(__dirname, 'views', 'rozvrh'));
 
-})
 app.get('/update', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'update.html'))
 })
 //smazání zápisu
 app.post('/update', function (request, respone, next) {
-  var sql = `UPDATE rozvrh SET predmet = '${request.body.id}', ucitel ='${request.body.Ucitelcitel}', ucebna = '${request.body.Trida}', budova ='${request.body.Predmet}'  WHERE idrozvrh = ${request.body.idrozvrh}`
-  // var sql = `UPDATE rozvrh SET (predmet, ucitel, ucebna, budova) VALUES ('${request.body.predmet}', '${request.body.ucitel}', '${request.body.ucebna}','${request.body.budova}') WHERE idrozvrh = ${request.body.idrozvrh}`
+  var sql = `UPDATE rozvrh SET ID = '${request.body.ID}', Ucitel ='${request.body.Ucitel}', Trida = '${request.body.Trida}', Predmet ='${request.body.Predmet}'  WHERE ID = ${request.body.ID}`
+//var sql = `UPDATE rozvrh SET (ID, Ucitel, Trida, Predmet) VALUES ('${request.body.ID}', '${request.body.Ucitel}', '${request.body.Trida}','${request.body.Predmet}') `
   connection.query(sql, (error, results, fields) => {
     if (error) {
       console.error(error);
@@ -172,12 +157,7 @@ app.post('/update', function (request, respone, next) {
     console.log(results);
   })
   respone.send(
-    `<p>Uživatel byl úspěšně změněn</p>
-    <a href="/menu"><button type="button" style="background: black;color: green;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 10px;cursor: pointer;">Menu</button></a>
-    <a href="/delete"><button type="button" style="background: black;color: green;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 10px;cursor: pointer;">Delete</button></a>
-    <a href="/new"><button type="button" style="background: black;color: green;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 10px;cursor: pointer;">New</button></a>
-    <a href="/rozvrh"><button type="button" style="background: black;color: green;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 10px;cursor: pointer;">Rozvrh</button></a>
-    <a href="/update"><button type="button" style="background: black;color: green;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 10px;cursor: pointer;">Update</button></a>
+    `<p>Rozvrh byl úspěšně změněn</p>
     `
   )
 

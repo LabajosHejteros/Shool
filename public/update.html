@@ -5,29 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+         /* Styly pro formulář */
+    form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    /* Styly pro nadpis formuláře */
+    form h1 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Styly pro vstupní pole */
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Styly pro tlačítko odeslání */
+    form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Přidání hover efektu při najetí myši na tlačítko odeslání */
+    form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    button {
+  display: inline-block;
+  padding: 10px 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #12094428;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+button:hover {
+  background-color: rgb(18, 107, 209);
+}
+
+button:active {
+  background-color: rgb(115, 151, 230);
+}
+    </style>
 </head>
 
 <body>
     <form action="/update" method="post">
-        <label for="idrozvrh">ID:</label>
-        <input type="number" id="idrozvrh" name="idrozvrh" value=""><br><br>
+        <label for="ID">ID:</label>
+        <input type="number" id="ID" name="ID" value=""><br><br>
 
-        <label for="predmet">Predmět:</label>
-        <input type="text" id="predmet" name="predmet" value=""><br><br>
+        <label for="Ucitel">Učitel:</label>
+        <input type="text" id="Ucitel" name="Ucitel" value=""><br><br>
 
-        <label for="ucitel">Učitel:</label>
-        <input type="text" id="ucitel" name="ucitel" value=""><br><br>
+        <label for="Trida">Třída:</label>
+        <input type="text" id="Trida" name="Trida" value=""><br><br>
 
-        <label for="ucebna">Učebna:</label>
-        <input type="text" id="ucebna" name="ucebna" value=""><br><br>
+        <label for="Predmet">Predmět:</label>
+        <input type="text" id="Predmet" name="Predmet" value=""><br><br>
 
-        <label for="budova">Budova:</label>
-        <input type="text" id="budova" name="budova" value=""><br><br>
+    
+
 
         <input type="submit" value="Odeslat">
     </form>
-    <button id="button"><a href="/menu">Menu</a></button>
-    <button id="button"><a href="/new">Nový zápis</a></button>
+    <button id="button"><a href="/index">Zpět</a></button>
+    <button id="button"><a href="/newrozvrh">Nový rozvrh</a></button>
     <button id="button"><a href="/rozvrh">Rozvrh</a></button>
 </body>
 
