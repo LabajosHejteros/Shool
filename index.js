@@ -173,3 +173,7 @@ app.listen(port, () => {
 //git add -A
 //git commit -m "kozleroshejteros"
 //git push -u origin main
+
+//SELECT *
+//FROM rozvrh
+//LEFT JOIN budovy ON budovy.id = rozvrh.id;

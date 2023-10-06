@@ -8,8 +8,9 @@
 </head>
 <body>
   <style>
-     /* Styl pro odkazy */
-     a {
+      /* Styl pro odkazy */
+     
+      a {
             color: rgb(10, 11, 66); /* Barva textu odkazu */
             background-color: rgba(11, 230, 212, 0.685); /* Barva pozadí odkazu */
             padding: 10px 20px; /* Odstup (vnitřní mezera) uvnitř odkazu */
@@ -17,65 +18,136 @@
             text-align: left; /* Zarovnání textu na levou stranu */
             display: inline-block; /* Udělá odkaz blokovým prvkem, což umožní nastavit šířku a výšku */
         }
+
+
+body {background-image: url(''); /* Obrázek jako pozadí */
+      background-size: cover; /* Obrázek bude pokrývat celé pozadí */
     
+    
+    
+    
+    }
+        /* Stylování tabulky */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
 
-        table {
-            text-align: center;
-            width: 100%;
-            border-collapse: collapse;
-            /* margin: 20px 0; */
-        }
+/* Stylování záhlaví tabulky */
+thead {
+  background-color: #ee6c6c34;
+}
 
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ff0000;
-            text-align: center;
-        }
+th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ff000050;
+  font-weight: bold;
+}
 
-        th {
-            background-color: #ff0000;
-            font-weight: bold;
-        }
+/* Stylování buněk tabulky */
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ff000041;
+  position: relative;
+}
 
-        tr:hover {
-            background-color: #ff000031;
-        }
+/* Uzavřené buňky */
+td:before,
+td:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background-color: #6b4be000;
+}
 
+td:before {
+  left: -10px;
+  box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.1);
+}
 
+td:after {
+  right: -10px;
+  box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Přidání alternativního barevného pozadí řádků */
+tbody tr:nth-child(even) {
+  background-color: #ff000038;
+}
+
+/* Změna barvy po najetí myší */
+tbody tr:hover {
+  background-color: #02000046;
+  transition: background-color 0.3s ease;
+}
+
+/* Stylování prvního sloupce */
+td:first-child {
+  font-weight: bold;
+}
+
+/* Stylování posledního sloupce */
+td:last-child {
+  text-align: right;
+}
+
+/* Stylování horního rámečku */
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Stylování spodního rámečku */
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+ /* Styl pro odkazy */
+ a {
+            color: blue; /* Barva odkazu (můžete změnit na libovolnou) */
+            text-decoration: none; /* Odstřihne podtržení pod odkazem */
+            text-align: left; /* Zarovnání textu na levou stranu */
+            display: block; /* Udělá odkaz blokovým prvkem, což zajistí, že bude na samostatném řádku */
+            margin-bottom: 10px; /* Mezera mezi odkazy (nepovinná) */
+        }¨
         button {
-            margin-top: 15px;
-            padding: 15px 25px;
-            border: unset;
-            border-radius: 15px;
-            color: #212121;
-            z-index: 1;
-            background: #a832329a;
-            position: relative;
-            font-weight: 1000;
-            font-size: 17px;
-            -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-            box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-            transition: all 250ms;
-            overflow: hidden;
-        }
+  display: inline-block;
+  padding: 10px 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #12094428;
+  transition: background-color 0.3s;
+  text-align: center;
+}
 
-        button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0;
-            border-radius: 15px;
-            background-color: #212121;
-            z-index: -1;
-            -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-            box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-            transition: all 250ms
-        }
+button:hover {
+  background-color: rgb(18, 107, 209);
+}
 
+button:active {
+  background-color: rgb(115, 151, 230);
+}
         button:hover {
             color: #ec1c1c;
         }
